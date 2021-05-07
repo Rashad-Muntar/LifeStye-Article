@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <div class="vote">
+  <span><%= vote_unvote(@article) %></span>
+    <span><small><%= @article.votes.count %></small></span>
+  </div>
+
   <strong>Title:</strong>
   <%= @article.title %>
 </p>
