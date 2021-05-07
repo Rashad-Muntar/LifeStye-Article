@@ -30,5 +30,5 @@
 
   <% @categories.each do |category| %>
       <%= category.articles.last.text %>
-    <%= image_tag(category.articles.last.image) %>  
+    <%= image_tag(category.articles.last.image, width: '300') %>  
   <% end %>
