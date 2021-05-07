@@ -26,4 +26,27 @@ module ApplicationHelper
           button_to('vote!', article_votes_path(id: vote, article_id: article.id))
         end
       end
+
+
+      def header_article_show
+        content = ''
+        voteChecker = 0
+        heighest = ''
+        @featured.each do |article|
+          if article.votes.length > voteChecker
+            voteChecker = article.votes.count
+            heighest = article
+          end
+        end
+        content << "<div class='header-img-wrapper'>"
+        if heighest.image.attached?
+          content << image_tag(heighest.image, class: 'header-img') do
+            content << content_tag(:span, heighest.category.name, class: 'img-cat')
+            content << content_tag(:span, heighest.title, class: 'heighest.title')
+          end
+          content << '</div>'
+        end
+        content.html_safe
+      end
+
 end
