@@ -38,14 +38,14 @@ module ApplicationHelper
             heighest = article
           end
         end
+
         content << "<div class='header-img-wrapper'>"
         if heighest.image.attached?
-          content << image_tag(heighest.image, class: 'header-img') do
+          content << image_tag(heighest.image, class: 'header-img')
+        end
             content << content_tag(:span, heighest.category.name, class: 'img-cat')
             content << content_tag(:span, heighest.title, class: 'heighest.title')
-          end
           content << '</div>'
-        end
         content.html_safe
       end
 
