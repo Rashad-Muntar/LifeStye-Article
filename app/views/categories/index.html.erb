@@ -28,7 +28,12 @@
 
 <%= link_to 'New Category', new_category_path %>
 
-<% @categories.each do |category| %>
-    <%= category.articles.last.text %>
-  <%= image_tag(category.articles.last.image) %>
+  <% @categories.each do |category| %>
+    if category.articles
+      <%= category.articles.last.text %>
+    <%= image_tag(category.articles.last.image) %>
+    else
+      <p>No articles for this category</p>
+    end
+  
   <% end %>
