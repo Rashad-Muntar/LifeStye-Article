@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :categories
-  root "articles#index"
+  root "categories#index"
   get "signup", to: "users#new"
   resources :users, except: [:new]
   resources :articles
