@@ -1,0 +1,11 @@
+<div class="card my-1"> 
+  <div class="card-body">
+    <%= form_with(model: [@article, @article.comments.build], class:"comment_form", local: true) do |f| %>
+      <div class="form-group">
+        <%= f.text_field :name, class: 'name_field', placeholder:"Enter your name"%>
+        <%= f.text_area :content, class: 'content_field', placeholder:"Type your comment here"%>
+      </div>
+      <%= f.submit 'Comment', class: 'comment-btn' %>
+    <% end %>
+  </div>
+</div>

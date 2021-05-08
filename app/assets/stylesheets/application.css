@@ -163,4 +163,68 @@ nav a:hover{
     color: rgb(255, 94, 0);
 }
 
+.show-container {
+    margin: 0 auto;
+    width: 90vw;
+  }
+  
+  .show-container .img-section {
+    width: 70%;
+  }
+  
+  .show-container img {
+    width: 100%;
+  }
+  
+  .top-detail {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .show-containe .top-detail {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .name_field {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: rgb(240, 224, 194);
+    border: none;
+    width: 70%;
+  }
+  
+  .comment_form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content_field {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: rgb(240, 224, 194);
+    border: none;
+    width: 70%;
+    height: 200px;
+  }
+  
+  .comment-btn {
+    width: 20%;
+    background: orange;
+    border: none;
+    border-radius: 3px;
+  }
+  
+  .time-posted small {
+    padding-right: 20px;
+    color: rgb(255, 81, 0);
+  }
+  
+  .top-detail .category-name {
+    color: rgb(255, 107, 21);
+  }
+  
+  
+
 

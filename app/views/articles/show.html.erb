@@ -1,19 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <div class="vote">
-  <span><%= vote_unvote(@article) %></span>
-    <span><small><%= @article.votes.count %></small></span>
+<section class="show-container">
+<%= link_to 'Back', articles_path %>
+  <section class="img-section">
+
+  <div class="top-detail">
+      <div> 
+        <p class="show category-name" ><%= @article.category.name %></p>
+        <p><%= @article.title %></p>
+          <div class="time-posted">
+            <small>Published by <%= @article.author.name %> </small>
+            <small>posted <%= time_ago_in_words(@article.created_at) %> ago </small>
+          </div>
+      </div>
+
+      <div class="vote">
+        <span><%= vote_unvote(@article) %></span> 
+          <span><small><%= @article.votes.count %></small></span>
+      </div>
   </div>
 
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+  <div class="img-wrapper">
+    <div class="img_div">
+    <% if @article.image.attached? %>
+    <%= image_tag @article.image %>
+    <% end %>
+    </div>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+    <p> <%= @article.text %> </p>
+    <section class="comment-setion">
+      <div class="comment-count"> <%= pluralize(@article.comments.count, "comment") %> </div>
+      <%= render @article.comments %>
+      <%= render partial: 'comments/form' %>
+      </section>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+  </div>
+
+</section>
+
+
+</section>
+<% if logged_in? && current_user.id == @article.user_id %>
+  <td><%= link_to 'Edit', edit_article_path(@article) %></td>
+  <td><%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<%  end %>
