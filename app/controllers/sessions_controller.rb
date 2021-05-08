@@ -6,11 +6,6 @@ class SessionsController < ApplicationController
   
     def create
       @categories = Category.all
-<<<<<<< HEAD
-      user = User.find_by(name: params[:session][:name].downcase)
-        session[:user_id] = user.id
-        redirect_to root_path
-=======
       user = User.find_by(name: params[:session][:name])
       if user && user.authenticate(params[:session][:password])
           session[:user_id] = user.id
@@ -19,7 +14,6 @@ class SessionsController < ApplicationController
       else
         flash[:notice] = 'Ooops something went wrong try again!'
           render 'new'
->>>>>>> c20415721172eb606513fd6d1227d237a0a4be3c
       end
   end
    
