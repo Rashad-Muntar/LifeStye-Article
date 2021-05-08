@@ -5,18 +5,7 @@
   <%= @category.name %>
 </p>
 
-<p>
-  <strong>Priority:</strong>
-  <%= @category.priority %>
-</p>
+<div class="cat-article-container">
+<%= cat_cards %>
+</div>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
-
-<p>
-<% @category.articles.each do |article| %>
-  <%= image_tag(article.image, width: '300') %> 
- <p><%= article.title %></p> 
- <p><%= article.text.truncate(30) %></p>
-<% end %>
-</p>

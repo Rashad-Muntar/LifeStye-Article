@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    @categories = Category.all
     @user = User.new
   end
 

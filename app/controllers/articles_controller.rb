@@ -3,20 +3,24 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
+    @categories = Category.all
     @articles = Article.all
   end
 
   # GET /articles/1 or /articles/1.json
   def show
+    @categories = Category.all
   end
 
   # GET /articles/new
   def new
+    @categories = Category.all
     @article = Article.new
   end
 
   # GET /articles/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /articles or /articles.json
