@@ -5,13 +5,10 @@ class SessionsController < ApplicationController
     end
   
     def create
+      @categories = Category.all
       user = User.find_by(name: params[:session][:name].downcase)
-       if session[:user_id] = user.id
         session[:user_id] = user.id
         redirect_to root_path
-       else
-        render new
-       end
       end
    
     def destroy
