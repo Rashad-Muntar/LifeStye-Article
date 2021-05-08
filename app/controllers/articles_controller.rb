@@ -25,18 +25,18 @@ class ArticlesController < ApplicationController
 
   # POST /articles or /articles.json
   def create
+    @categories = Category.all
     @article = Article.new(article_params)
     @users = User.all
     @article.author = @users.first
-    respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: "Article was successfully created." }
-        format.json { render :show, status: :created, location: @article }
+        flash[:success] = "Article was successfully created."
+        redirect_to @article
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        flash[:danger] = @article.errors
+        render :new
       end
-    end
+
   end
 
   # PATCH/PUT /articles/1 or /articles/1.json

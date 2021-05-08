@@ -75,7 +75,7 @@ module ApplicationHelper
   def cat_cards
     content = ''
     @category.articles.each_with_index do |article, index|
-      if index.even?
+      if index.even? && index != 0
         content << "<div class='home-cat-card'>"
         content << "<div>"
          content << image_tag(article.image, class: 'cat-img')

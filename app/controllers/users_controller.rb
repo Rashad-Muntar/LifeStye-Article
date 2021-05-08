@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def new
     @categories = Category.all
     @user = User.new
@@ -6,11 +7,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.password = "password"
     if @user.save
-      flash[:notice] = 'You have succesfully sign up'
+      flash[:success] = 'You have succesfully sign up'
       redirect_to root_path
     else
-      flash[:notice] = 'You have succesfully sign up'
+      flash[:danger] = 'Ooops something went wrong try again!'
       redirect_to signup_path
     end
   end

@@ -1,7 +1,6 @@
-<p id="notice"><%= notice %></p>
+
 
 <section class="show-container">
-<%= link_to 'Back', articles_path %>
   <section class="img-section">
 
   <div class="top-detail">
@@ -11,6 +10,10 @@
           <div class="time-posted">
             <small>Published by <%= @article.author.name %> </small>
             <small>posted <%= time_ago_in_words(@article.created_at) %> ago </small>
+            <% if logged_in? && current_user.id == @article.user_id %>
+              <%= link_to 'Edit', edit_article_path(@article) %>
+              <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%  end %>
           </div>
       </div>
 
@@ -40,7 +43,4 @@
 
 
 </section>
-<% if logged_in? && current_user.id == @article.user_id %>
-  <td><%= link_to 'Edit', edit_article_path(@article) %></td>
-  <td><%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<%  end %>
+
