@@ -1,12 +1,15 @@
+<div class="form-body">
+<h3 class="title">Sign up here</h3>
 <%= form_with(model: @user) do |form| %>
   
     <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
+      <%= form.text_field :name, placeholder:"Enter your name"%>
     </div>
   
     <div class="actions">
-      <%= form.submit "Sign up" %>
+      <%= form.submit "Sign up", class:"submit" %>
     </div>
   <% end %>
+
+  </div>
   

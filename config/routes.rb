@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
   resources :users, except: [:new]
-  resources :articles do
+  resources :articles, except: [:index] do
     resources :votes, only: [:create, :destroy]
     resources :comments, only: [:create]
   end

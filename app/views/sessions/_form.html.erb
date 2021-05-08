@@ -1,12 +1,19 @@
+<div class="form-body">
+  <h3 class="title">Sign in here</h3>
 <%= form_with(url: login_path, scope: :session, local: true) do |form| %>
   
     <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
+      <%= form.text_field :name, placeholder:"Enter your name" %>
+    </div>
+
+    <div class="field">
+      <%= form.hidden_field :password, value:"password" %>
     </div>
   
     <div class="actions">
-      <%= form.submit "Log in" %>
+      <%= form.submit "Log in", class:"submit" %>
     </div>
 
   <% end %>
+
+  </div>
