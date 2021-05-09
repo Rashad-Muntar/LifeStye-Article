@@ -17,10 +17,17 @@
           </div>
       </div>
 
-      <div class="vote">
-        <span><%= vote_unvote(@article) %></span> 
-          <span><small><%= @article.votes.count %></small></span>
+      <div class="btns">
+          <div class="vote">
+            <span><%= vote_unvote(@article) %></span> 
+              <span><small><%= @article.votes.count %></small></span>
+          </div>
+
+          <div class="bookmark">
+            <span><%= bookmark(@article) %></span> 
+          </div>
       </div>
+
   </div>
 
   <div class="img-wrapper">

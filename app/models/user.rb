@@ -3,5 +3,6 @@ class User < ApplicationRecord
     validates :password, presence: true
     has_many :articles, dependent: :destroy
     has_many :votes, dependent: :destroy
+    has_many :bookmarks, dependent: :destroy
     has_secure_password
 end

@@ -50,6 +50,17 @@ nav a:hover{
      margin-bottom: 0;
  }
 
+ .img_div img{
+   height: 600px;
+   
+ }
+
+ .alert{
+   width: 500px;
+   margin: 0 auto;
+   margin-bottom: 0;
+   height: 50px;
+ }
 
  .head-section{
    display: flex;
@@ -146,6 +157,10 @@ nav a:hover{
 
 .home-cat-card .content{
     padding: 15px 10px;
+}
+
+.btns{
+  display: flex;
 }
 
 .home-cat-card .content p{

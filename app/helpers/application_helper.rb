@@ -27,6 +27,15 @@ module ApplicationHelper
         end
       end
 
+      def bookmark(article)
+        bookmark = Bookmark.find_by(article: article, user: current_user)
+        if bookmark
+          button_to('unbook!', article_bookmark_path(id: bookmark, article_id: article.id), method: :delete)
+        else
+          button_to('bookmark!', article_bookmarks_path(id: bookmark, article_id: article.id))
+        end
+      end
+
 
       def header_article_show
         content = ''

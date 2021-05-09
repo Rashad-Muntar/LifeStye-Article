@@ -1,5 +1,4 @@
 class Category < ApplicationRecord
+    validates :name, presence: true
     has_many :articles
-    has_many :votes, dependent: :destroy
-
 end
