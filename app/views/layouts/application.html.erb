@@ -30,7 +30,12 @@
   </div>
 
 </nav>
-<p id="notice"><%= notice %></p>
+
+<% if notice %>
+  <div class="alert alert-success" role="alert">
+  <p id="notice"><%= notice %></p>
+</div>
+<% end %>
     <%= yield %>
   </body>
 </html>

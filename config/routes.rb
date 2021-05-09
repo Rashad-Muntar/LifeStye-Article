@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, except: [:new]
   resources :articles, except: [:index] do
     resources :votes, only: [:create, :destroy]
+    resources :bookmarks, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
