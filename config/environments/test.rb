@@ -49,6 +49,9 @@ Rails.application.configure do
   # Raise exceptions for disallowed deprecations.
   config.active_support.disallowed_deprecation = :raise
 
+  # Store uploaded files on the local file system in a temporary directory.
+  config.active_storage.service = :cloudinary
+
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
 
@@ -58,3 +61,5 @@ Rails.application.configure do
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
 end
+
+Rails.application.routes.default_url_options[:host] = "localhost:3000"
