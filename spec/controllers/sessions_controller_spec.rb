@@ -1,21 +1,52 @@
 require 'rails_helper'
 
 
-feature 'Log in feature page', type: :feature do
-    feature 'Login an existing user' do
-      before(:each) do
-        User.create(name: 'Foo', password: 'password')
-        visit '/login'
-        within('#form') do
-          fill_in 'Email', with: 'foo@mail.com'
-          fill_in 'Password', with: 'password'
-        end
-        click_button 'Log in'
+
+RSpec.feature 'Authentications', type: :feature do
+
+  let!(:user) do
+    User.create(name: 'John Doe',
+                password: 'johndoe')
+  end
+
+  describe 'Log in' do
+    before do
+      visit login_path
+    end
+
+    it 'visits the login page' do
+      have_link 'Log In', href: login_path
+      have_link 'Register', href: signup_path
+      have_link 'Home', href: root_path
+      expect(page).to have_content('login')
+    end
+
+    context 'if login information valid' do
+      it 'logs in user' do
+        fill_in 'name', with: user.name
+        click_button 'Log In'
+        expect(page).to have_content("You have succesffuly logged in")
+        expect(current_path).to eq root_path
+        have_link 'Home', href: root_path
+        have_link ' Write Article', href: new_article_path
+        have_link 'Sign out', href: signout_path
       end
-  
-      scenario 'when you login with valid params' do
-        expect(page).to have_content('You have succesffuly logged in')
-        expect(page).to have_content('Sign out')
+    end
+
+    describe 'Log out', type: :feature do
+      before do
+        visit login_path
+        fill_in 'name', with: user.username
+        click_button 'Log In'
+      end
+
+      context 'when logged out' do
+        before { click_on 'Logout' }
+        it 'redirects to the home page' do
+          expect(current_path).to eq(root_path)
+          expect(page).to have_content("You have succesffuly logged out")
+        end
       end
     end
   end
+end
