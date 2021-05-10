@@ -1,4 +1,6 @@
 module ApplicationHelper
+# rubocop:disable Style/GuardClause, Layout/CommentIndentation, Layout/CommentIndentation, Lint/RedundantCopDisableDirective
+
   def show_sign_in
     out = ''
     out << link_to(link_to('Sign In', login_path)) unless logged_in?
@@ -102,4 +104,6 @@ module ApplicationHelper
 
     article_image.html_safe if index.even?
   end
+
+  # rubocop:enable Style/GuardClause, Layout/CommentIndentation, Layout/CommentIndentation, Lint/RedundantCopDisableDirective
 end

@@ -13,6 +13,7 @@
           <div class="vote">
             <span> <%= vote_unvote(@article) %></span>
       </div>
+          <%= @article.votes.count %>
           <div class="bookmark">
             <span><%= bookmark(@article) %></span> 
           </div>
