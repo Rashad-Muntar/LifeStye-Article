@@ -43,6 +43,12 @@ nav a {
   text-decoration: none;
 }
 
+.content a {
+  color: rgb(41, 41, 41);
+  font-weight: 700;
+  text-decoration: none;
+}
+
 nav a:hover {
   color: rgb(255, 95, 2);
   border-bottom: 3px solid rgb(255, 95, 2);
@@ -91,15 +97,6 @@ nav a:hover {
   width: 70%;
 }
 
-.head-img-title {
-  font-size: 1.3em;
-  color: rgb(255, 94, 0);
-  opacity: 0.6;
-  width: 250px;
-  padding: 5px 10px;
-  font-weight: 700;
-}
-
 .header-img-content {
   top: 70% !important;
   position: absolute;
@@ -129,55 +126,8 @@ nav a:hover {
   border-radius: 0 !important;
 }
 
-.cat-img-title {
-  font-weight: 700;
-  padding: 5px 5px;
-  border-bottom: 3px solid rgb(255, 217, 0);
-  color: white;
-  text-decoration: none;
-}
-
-.cat-article-title {
-  position: absolute;
-  top: 80%;
-}
-
-.cat-article-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.home-cat-card {
-  width: 50%;
-  -webkit-box-shadow: 1px 1px 4px -1px #000;
-  box-shadow: 1px 1px 4px -1px #000;
-  display: flex;
-}
-
-.home-cat-title {
-  color: rgb(255, 94, 0);
-  border-bottom: 3px solid rgb(255, 94, 0);
-  padding-bottom: 5px;
-  width: 70px;
-}
-
-.home-cat-card .content {
-  padding: 15px 10px;
-}
-
 .btns {
   display: flex;
-}
-
-.home-cat-card .content p {
-  font-size: 0.9em;
-}
-
-.home-cat-card .content a {
-  font-weight: 700;
-  color: rgb(46, 46, 46);
-  text-decoration: none;
 }
 
 .footer .social a {
@@ -188,20 +138,6 @@ small,
 .small {
   font-size: 0.875em;
   color: white;
-}
-
-.home-cat-card .content a:hover {
-  color: rgb(255, 94, 0);
-}
-
-.time-posted small {
-  padding-right: 20px;
-  color: rgb(255, 81, 0);
-}
-
-.home-cat-card .content small {
-  padding-right: 25px;
-  color: rgb(255, 94, 0);
 }
 
 .show-container {
@@ -395,4 +331,54 @@ footer .wrapper {
 
 .edit:hover {
   color: white;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  height: 100vh;
+  margin-bottom: 0;
+}
+
+.content {
+  margin: 0 20px;
+  height: 50vh;
+}
+
+.article-img {
+  height: 50vh;
+  width: 25vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.theme-color {
+  color: rgb(255, 123, 0);
+  border-bottom: 3px solid rgb(255, 123, 0);
+  padding-bottom: 5px;
+  width: 100px;
+}
+
+.content a:hover {
+  color: rgb(255, 123, 0);
+}
+
+.card-title {
+  color: rgb(255, 123, 0);
+  border-bottom: 3px solid rgb(255, 123, 0);
+  padding-bottom: 3px;
+  width: 100px;
+  text-decoration: none;
+}
+
+.card-text {
+  position: absolute;
+  top: 70%;
+  font-weight: 700;
+}
+
+.head-img-title {
+  width: 500px;
+  font-size: 1.2em;
+  border: none;
 }
