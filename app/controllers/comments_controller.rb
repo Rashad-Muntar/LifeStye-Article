@@ -1,13 +1,13 @@
 class CommentsController < ApplicationController
+
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.new(comment_params)
-    respond_to do |format|
+
       if @comment.save
-        format.html do
           redirect_to @article, notice: 'Comment was successfully created.'
-        end
-      end
+      else
+        redirect_to @article, notice: 'Please fill all fields'
     end
   end
 

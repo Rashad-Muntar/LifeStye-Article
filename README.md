@@ -1,6 +1,6 @@
 # Social Media
 
-> This a rails app that allow users to signup and login. a The signed up users can create post to which is associated to the user's account and it is associated to a category. User is able to vote an article and user is able to bookmar the article as well. Built with Ruby on Rails 6.
+> This a rails app allow users to signup and login. The signed up users can create post which is associated to the user's account and it is associated to a category. User is able to vote an article and user is able to bookmark the article as well. Built with Ruby on Rails 6.
 ## Built With
 
 - Ruby on Rails MVC Framework.
