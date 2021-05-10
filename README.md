@@ -1,10 +1,6 @@
 # Life style Article Web Application
 
-<<<<<<< HEAD
-> This a rails app allow users to signup and login. The signed up users can create post which is associated to the user's account and it is associated to a category. User is able to vote an article and user is able to bookmark the article as well. Built with Ruby on Rails 6.
-=======
-> This a rails app that allow users to signup and login. a The signed up users can create an Article to which is associated to the user's account and it is associated to a category. User is able to vote an article and user is able to bookmark the article as well. Built with Ruby on Rails 6.
->>>>>>> 97d094a609adaf35e07a6e5e6d83555daea0fafd
+> This a rails app that allow users to signup and login. The signed up user can create an article which is associated to the user's account and it is associated to a category. User is able to vote an article and user is able to bookmark the article as well. Built with Ruby on Rails 6.
 ## Built With
 
 - Ruby on Rails MVC Framework.
@@ -60,17 +56,17 @@ Sign Up:
    Sign up
 - To create a new user, click on the `Sign Up` link and choose a name.
   Sign In:
-- To sign in, click on the `Sign In` link and complete with your name.
+- To sign in, click on the `Sign In` link and fill in your name.
   Sign out:
 - To sign out, click on the `Sign Out` link.
 
 Create a Post:
 - First you need to be logged in or sign up.
-- To create a new article, type your article into the new article form and click 'Post Article' button.
+- To create a new article, type your article name, type in new article, choose categpry, upload image and click 'Post Article' button.
 
 Vote an Article
-- vote an article by clicking on the `vote` button in the article show page.
-- unvote an article by clicking on the `unvotevote` button in the article show page.
+- vote an article by clicking on the `vote` button in the article's show page.
+- unvote an article by clicking on the `unvote` button in the article's show page.
 
 Bookmark an Article
 - bookmark an article by clicking on the `bookmark` button in the article show page.
