@@ -5,31 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/c066f15d3e.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  
-<nav>
-  <div>
-    <%= link_to "YoLLoo", root_path, class:"navbar-brand"%>
-    <%= link_to "Write Article", new_article_path%>
-  </div>
-  
-  <div>
-      <%= nav_category %>
-  </div>
-
-  <div>
-    <span><%= show_sign_in %></span> 
-    <span><%= show_sign_up %></span>
-    <span><%= show_sign_out %></span>
-  </div>
-
-</nav>
+  <%= render "layouts/header"%>
 
 <% if notice %>
   <div class="alert alert-success" role="alert">
@@ -37,5 +20,6 @@
 </div>
 <% end %>
     <%= yield %>
+    <%= render "layouts/footer"%>
   </body>
 </html>
