@@ -9,6 +9,16 @@
 
 To set up a local version of this project, a collection of steps have been put together to help guide you from installations to usage. Simply follow the guide below and you'll be up and running in no time.
 
+## Homepage
+![Screenshot from 2021-05-10 17-42-05](https://user-images.githubusercontent.com/58520480/117701978-6a91be80-b1b7-11eb-8971-3cb898c09ace.png)
+
+## Category Show page
+
+![Screenshot from 2021-05-10 17-42-35](https://user-images.githubusercontent.com/58520480/117702186-b5133b00-b1b7-11eb-9777-02412249b2b1.png)
+
+## Article show page
+
+
 ### Set up
 
 - Install [git](https://git-scm.com/downloads)
