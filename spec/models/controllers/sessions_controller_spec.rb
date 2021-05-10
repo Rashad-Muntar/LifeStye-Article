@@ -11,8 +11,6 @@ feature 'Log in feature page', type: :feature do
         click_button 'Log in'
         expect(page).to have_content('Sign out')
       end
-      
     end
   end
 end
-

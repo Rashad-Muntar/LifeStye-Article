@@ -13,15 +13,13 @@ class ApplicationController < ActionController::Base
     unless logged_in?
       flash[:notice] = 'You must be logged in first'
       redirect_to login_path
-
     end
   end
 
   def require_admin
-    if !current_user.admin?
+    unless current_user.admin?
       flash[:notice] = 'Only the admin can access this page'
       redirect_to root_path
     end
   end
-
 end

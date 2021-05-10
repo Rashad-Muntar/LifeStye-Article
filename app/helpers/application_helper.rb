@@ -20,28 +20,28 @@ module ApplicationHelper
   def vote_unvote(article)
     vote = Vote.find_by(article: article, user: current_user)
     if vote
-      button_to('unvote!', article_vote_path(id: vote, article_id: article.id), method: :delete, class:"vote")
+      button_to('unvote!', article_vote_path(id: vote, article_id: article.id), method: :delete, class: 'vote')
     else
-      button_to('vote!', article_votes_path(id: vote, article_id: article.id), class:"vote")
+      button_to('vote!', article_votes_path(id: vote, article_id: article.id), class: 'vote')
     end
   end
 
   def bookmark(article)
     bookmark = Bookmark.find_by(article: article, user: current_user)
     if bookmark
-      button_to('unbook!', article_bookmark_path(id: bookmark, article_id: article.id), method: :delete, class:"vote")
+      button_to('unbook!', article_bookmark_path(id: bookmark, article_id: article.id), method: :delete, class: 'vote')
     else
-      button_to('bookmark!', article_bookmarks_path(id: bookmark, article_id: article.id), class:"vote")
+      button_to('bookmark!', article_bookmarks_path(id: bookmark, article_id: article.id), class: 'vote')
     end
   end
 
   def header_article_show
     content = ''
-    voteChecker = 0
+    vote_checker = 0
     heighest = ''
     @featured.each do |article|
-      if article.votes.length > voteChecker
-        voteChecker = article.votes.count
+      if article.votes.length > vote_checker
+        vote_checker = article.votes.count
         heighest = article
       end
     end
@@ -80,7 +80,7 @@ module ApplicationHelper
   def cat_cards
     content = ''
     @category.articles.each_with_index do |article, index|
-      if index.even? && index != 0
+      if index.even?
         content << "<div class='home-cat-card'>"
         content << '<div>'
         content << image_tag(article.image, class: 'cat-img')
@@ -114,8 +114,9 @@ module ApplicationHelper
   def show_edit_delete
     content = ''
     if logged_in? && current_user.id == @article.user_id
-      content << link_to('edit', edit_article_path(@article), class:"vote edit")
-      content << button_to('delete', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' }, class:"vote")
+      content << link_to('edit', edit_article_path(@article), class: 'vote edit')
+      content << button_to('delete', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' },
+                                                             class: 'vote')
     end
     content.html_safe
   end

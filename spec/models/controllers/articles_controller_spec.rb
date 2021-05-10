@@ -12,8 +12,8 @@ feature 'Creating a post', type: :feature do
       end
       visit '/articles/new'
       within('form') do
-      fill_in 'article_title', with: 'Article.'
-      fill_in 'article_text', with: 'We are creating article.'
+        fill_in 'article_title', with: 'Article.'
+        fill_in 'article_text', with: 'We are creating article.'
         click_button 'commit'
         expect(page).to have_content('Article was successfully created.')
       end
