@@ -1,6 +1,6 @@
-# Social Media
+# Life style Article Web Application
 
-> This a rails app that allow users to signup and login. a The signed up users can create post to which is associated to the user's account and it is associated to a category. User is able to vote an article and user is able to bookmar the article as well. Built with Ruby on Rails 6.
+> This a rails app that allow users to signup and login. a The signed up users can create an Article to which is associated to the user's account and it is associated to a category. User is able to vote an article and user is able to bookmark the article as well. Built with Ruby on Rails 6.
 ## Built With
 
 - Ruby on Rails MVC Framework.
@@ -17,6 +17,7 @@ To set up a local version of this project, a collection of steps have been put t
 ![Screenshot from 2021-05-10 17-42-35](https://user-images.githubusercontent.com/58520480/117702186-b5133b00-b1b7-11eb-9777-02412249b2b1.png)
 
 ## Article show page
+![Screenshot from 2021-05-10 17-44-10](https://user-images.githubusercontent.com/58520480/117702583-38cd2780-b1b8-11eb-871e-66bfc29c7639.png)
 
 
 ### Set up
