@@ -79,19 +79,34 @@ module ApplicationHelper
 
   def cat_cards
     content = ''
-    @category.articles.each_with_index do |article, _index|
-      content << "<div class='home-cat-card'>"
-      content << '<div>'
-      content << image_tag(article.image, class: 'cat-img')
-      content << '</div>'
-      content << "<div class='content'>"
-      content << content_tag(:p, @category.name, class: 'card-title home-cat-title')
-      content << link_to(article.title, article_path(article), class: 'card-title')
-      content << content_tag(:p, article.text.truncate(100), class: 'card-text')
-      content << content_tag(:small, 'Read more', class: 'card-text')
-      content << content_tag(:small, time_ago_in_words(article.created_at), class: 'card-text')
-      content << '</div>'
-      content << '</div>'
+    @category.articles.each_with_index do |article, index|
+      if index.even? and index != 2
+        content << "<div class='home-cat-card'>"
+        content << '<div>'
+        content << image_tag(article.image, class: 'cat-img')
+        content << '</div>'
+        content << "<div class='content'>"
+        content << content_tag(:p, @category.name, class: 'card-title home-cat-title')
+        content << link_to(article.title, article_path(article), class: 'card-title')
+        content << content_tag(:p, article.text.truncate(100), class: 'card-text')
+        content << content_tag(:small, 'Read more', class: 'card-text')
+        content << content_tag(:small, time_ago_in_words(article.created_at), class: 'card-text')
+        content << '</div>'
+        content << '</div>'
+      else
+        content << "<div class='home-cat-card'>"
+        content << "<div class='content'>"
+        content << content_tag(:p, @category.name, class: 'card-title home-cat-title')
+        content << link_to(article.title, article_path(article), class: 'card-title')
+        content << content_tag(:p, article.text.truncate(100), class: 'card-text')
+        content << content_tag(:small, 'Read more', class: 'card-text')
+        content << content_tag(:small, time_ago_in_words(article.created_at), class: 'card-text')
+        content << '</div>'
+        content << '<div>'
+        content << image_tag(article.image, class: 'cat-img')
+        content << '</div>'
+        content << '</div>'
+      end
     end
     content.html_safe
   end
