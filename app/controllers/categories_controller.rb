@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     @featured = Article.includes('votes')
+    
   end
 
   # GET /categories/1 or /categories/1.json
@@ -26,8 +27,8 @@ class CategoriesController < ApplicationController
 
   # POST /categories or /categories.json
   def create
+    @categories = Category.all
     @category = Category.new(category_params)
-
     respond_to do |format|
       if @category.save
         format.html { redirect_to @category, notice: 'Category was successfully created.' }

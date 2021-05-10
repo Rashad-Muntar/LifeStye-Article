@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       flash[:notice] = 'You have succesffuly logged in'
       redirect_to root_path
     else
-      flash[:notice] = 'Ooops something went wrong try again!'
+      flash[:notice] = 'No username found. Please Sign up!'
       render 'new'
     end
   end
