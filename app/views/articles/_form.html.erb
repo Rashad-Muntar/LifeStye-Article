@@ -1,5 +1,6 @@
 <div class="form-body new_article">
-<%= form_with(model: article) do |form| %>
+<h3 class="title">Create a new article</h3>
+<%= form_with(model: article, html: {:class => 'new_article'}) do |form| %>
   <% if article.errors.any? %>
     <div id="error_explanation">
       <ul>

@@ -1,3 +1,5 @@
+<div class="form-body">
+<h3 class="title">Admin create new category</h3>
 <%= form_with(model: category) do |form| %>
   <% if category.errors.any? %>
     <div id="error_explanation">
@@ -12,16 +14,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder:"Enter category name"%>
   </div>
 
   <div class="field">
-    <%= form.label :priority %>
-    <%= form.number_field :priority %>
+    <%= form.number_field :priority, placeholder:"How important is this one"%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Save Category", class:"submit"%>
   </div>
 <% end %>
+
+</div>

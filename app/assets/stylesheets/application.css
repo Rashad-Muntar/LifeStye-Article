@@ -265,12 +265,16 @@ nav a:hover {
   padding-top: 50px;
 }
 
+.form-body .new_article{
+  height: 90vh;
+}
+
 .form-body form {
   border-radius: 5px;
   -webkit-box-shadow: 1px 1px 4px -1px #000;
   box-shadow: 1px 1px 4px -1px #000;
   margin: 0 auto;
-  height: 100%;
+  height: 50%;
   display: flex;
   padding: 50px 30px;
   align-items: center;
@@ -375,5 +379,20 @@ small,
   color: rgb(255, 255, 255);
 }
 
+.vote{
+  border: none;
+  background-color: rgb(255, 123, 0);
+  color: white;
+  height: 30px;
+  margin-left: 5px;
+  border-radius: 3px;
+}
 
+.edit{
+  text-decoration: none;
+  padding: 0 10px
+}
 
+.edit:hover{
+  color: white;
+}

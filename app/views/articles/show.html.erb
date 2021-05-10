@@ -11,8 +11,7 @@
 
       <div class="btns">
           <div class="vote">
-            <span><%= vote_unvote(@article) %></span> 
-              <span><small><%= @article.votes.count %></small></span>
+            <span><%= vote_unvote(@article) %><%= @article.votes.count %></span> s
       </div>
 
           <div class="bookmark">

@@ -20,18 +20,18 @@ module ApplicationHelper
   def vote_unvote(article)
     vote = Vote.find_by(article: article, user: current_user)
     if vote
-      button_to('unvote!', article_vote_path(id: vote, article_id: article.id), method: :delete)
+      button_to('unvote!', article_vote_path(id: vote, article_id: article.id), method: :delete, class:"vote")
     else
-      button_to('vote!', article_votes_path(id: vote, article_id: article.id))
+      button_to('vote!', article_votes_path(id: vote, article_id: article.id), class:"vote")
     end
   end
 
   def bookmark(article)
     bookmark = Bookmark.find_by(article: article, user: current_user)
     if bookmark
-      button_to('unbook!', article_bookmark_path(id: bookmark, article_id: article.id), method: :delete)
+      button_to('unbook!', article_bookmark_path(id: bookmark, article_id: article.id), method: :delete, class:"vote")
     else
-      button_to('bookmark!', article_bookmarks_path(id: bookmark, article_id: article.id))
+      button_to('bookmark!', article_bookmarks_path(id: bookmark, article_id: article.id), class:"vote")
     end
   end
 
@@ -114,8 +114,8 @@ module ApplicationHelper
   def show_edit_delete
     content = ''
     if logged_in? && current_user.id == @article.user_id
-      content << link_to('edit', edit_article_path(@article))
-      content << button_to('delete', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' })
+      content << link_to('edit', edit_article_path(@article), class:"vote edit")
+      content << button_to('delete', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' }, class:"vote")
     end
     content.html_safe
   end
