@@ -52,10 +52,13 @@ module ApplicationHelper
     vote_checker = 0
     heighest = ''
     @featured.each do |article|
-      if article.votes.length > vote_checker
-        vote_checker = article.votes.count
-        heighest = article
+      if (article.votes).exists? 
+        if article.votes.length > vote_checker
+          vote_checker = article.votes.count
+          heighest = article
+        end
       end
+ 
     end
     content << "<div class='card bg-dark text-white header_image'>"
     content << image_tag(heighest.image, class: 'card-img main-img') if heighest.image.attached?
