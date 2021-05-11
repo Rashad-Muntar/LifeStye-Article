@@ -29,10 +29,12 @@ To set up a local version of this project, a collection of steps have been put t
 - Navigate to the preferred location/folder you want the app on your local machine. Use `cd <file-path>` for this.
 - Run `git clone https://github.com/Rashad-Muntar/ror-capstone.git` to download the source file.
 - Now that you have a local copy of the project, navigate to the root of the project folder from your terminal.
+- Run `yarn` to install missing dependencies
 - Run `bundle install` to install all dependencies in the Gemfile file.
 - Install postgres to use database and set up authentication
 - Run `rails db:migrate` to generate database tables.
 - Run `rails server` to get a server running on your local machine.
+
 
 ### Other Dependencies
 
