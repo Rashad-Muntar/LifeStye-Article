@@ -47,6 +47,14 @@ module ApplicationHelper
     end
   end
 
+  def show_current_user
+    content = ''
+    if current_user
+     content << content_tag(:span, current_user.name)
+    end
+    content.html_safe
+  end
+
   def header_article_show
     content = ''
     vote_checker = 0
@@ -58,7 +66,6 @@ module ApplicationHelper
           heighest = article
         end
       end
- 
     end
     content << "<div class='card bg-dark text-white header_image'>"
     content << image_tag(heighest.image, class: 'card-img main-img') if heighest.image.attached?
