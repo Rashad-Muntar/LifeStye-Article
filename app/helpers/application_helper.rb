@@ -60,19 +60,21 @@ module ApplicationHelper
     vote_checker = 0
     heighest = ''
     @featured.each do |article|
-      if (article.votes).exists? 
+
         if article.votes.length > vote_checker
           vote_checker = article.votes.count
           heighest = article
         end
-      end
+
     end
     content << "<div class='card bg-dark text-white header_image'>"
+    if !heighest.blank?
     content << image_tag(heighest.image, class: 'card-img main-img') if heighest.image.attached?
     content << "<div class='card-img-overlay header-img-content'>"
     content << content_tag(:p, heighest.title, class: 'card-title head-img-title title')
     content << content_tag(:p, heighest.text.truncate(100), class: 'card-text')
     content << '</div>'
+    end
     content << '</div>'
     content.html_safe
   end

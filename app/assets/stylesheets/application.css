@@ -17,6 +17,10 @@ body {
   overflow-x: hidden;
 }
 
+.fa-user{
+  color: gray !important;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
