@@ -80,5 +80,19 @@ module ApplicationHelper
     content.html_safe
   end
 
+  def new_form_error(item)
+    content = ''
+    if item.errors.any?
+      content << "<div id='error_explanation'>"
+      content << '<ul>'
+      item.errors.each do |error|
+        content << content_tag(:li, error.full_message, class: 'error')
+      end
+      content << '</ul>'
+      content << '</div>'
+    end
+    content.html_safe
+  end
+
   # rubocop:enable Style/GuardClause, Layout/CommentIndentation, Metrics/ModuleLength, Layout/CommentIndentation, Lint/RedundantCopDisableDirective
 end

@@ -1,15 +1,7 @@
 <div class="form-body new_article">
 <h3 class="title">Create a new article</h3>
 <%= form_with(model: article, html: {:class => 'new_article'}) do |form| %>
-  <% if article.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-        <% article.errors.each do |error| %>
-          <li class="error"><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+ <%= new_form_error(@article) %>
 
   <div class="field">
     <%= form.text_field :title, placeholder:"Enter article title"%>
