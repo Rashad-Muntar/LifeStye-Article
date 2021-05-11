@@ -14,6 +14,7 @@ class CategoriesController < ApplicationController
   def show
     @categories = Category.all
     @category = Category.find(params[:id])
+    @category_articles = @category.articles.order('id DESC').limit(4)
   end
 
   # GET /categories/new

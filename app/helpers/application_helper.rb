@@ -19,6 +19,16 @@ module ApplicationHelper
     out.html_safe
   end
 
+  def show_notice
+    content = ''
+    if notice
+    content << "<div class='alert alert-success' role='alert'>"
+     content << content_tag(:p, notice, class:"notice")
+     content << "</div>"
+    end
+    content.html_safe
+  end
+
   def vote_unvote(article)
     vote = Vote.find_by(article: article, user: current_user)
     if vote
@@ -89,20 +99,41 @@ module ApplicationHelper
     content.html_safe
   end
 
+  def show_category_articles
+    content = ''
+    @category_articles.each_with_index do |article, index|
+      content << "<div>"
+        content << image_tag(article.image, class:'article-img') if index.even?
+        content << "<div class='content'>"
+          content << content_tag(:p, @category.name, class:"theme-color")
+          content << link_to(article.title, article_path(article))
+          content <<  content_tag(:p, "Read more")
+          content << content_tag(:p, time_ago_in_words(article.created_at))
+        content << "</div>"
+        content << image_tag(article.image, class: 'article-img') if index.odd?
+      content << "</div>"
+    end
+    content.html_safe
+  end
+
   def odd_article_image(index, article)
     article_image = ''
-
     article_image << image_tag(article.image, class: 'article-img')
-
     article_image.html_safe if index.odd?
   end
 
   def even_article_image(index, article)
     article_image = ''
-
     article_image << image_tag(article.image, class: 'article-img')
-
     article_image.html_safe if index.even?
+  end
+
+  def show_article_mg
+    content = ''
+    if @article.image.attached?
+      content << image_tag(@article.image)
+    end
+    content.html_safe
   end
 
   # rubocop:enable Style/GuardClause, Layout/CommentIndentation, Layout/CommentIndentation, Lint/RedundantCopDisableDirective
