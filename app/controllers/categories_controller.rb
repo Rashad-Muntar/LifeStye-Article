@@ -7,7 +7,6 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.includes([:articles])
     @featured = Article.with_attached_image.includes([:votes])
-    
   end
 
   # GET /categories/1 or /categories/1.json

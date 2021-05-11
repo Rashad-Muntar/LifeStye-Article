@@ -17,7 +17,7 @@ body {
   overflow-x: hidden;
 }
 
-.fa-user{
+.fa-user {
   color: gray !important;
 }
 
@@ -158,7 +158,6 @@ small,
   width: 100%;
 }
 
-
 .top-detail .category-name {
   color: rgb(255, 107, 21);
 }
@@ -288,4 +287,3 @@ footer .wrapper {
 .edit:hover {
   color: white;
 }
-

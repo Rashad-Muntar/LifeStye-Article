@@ -28,5 +28,4 @@ RSpec.feature 'Authentication', type: :feature do
     click_link 'Sign out'
     expect(page).to have_content('You have succesffuly logged out')
   end
-
 end

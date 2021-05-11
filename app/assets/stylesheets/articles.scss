@@ -3,50 +3,50 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .top-detail {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .show-containe .top-detail {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .name_field {
-    margin-bottom: 10px;
-    border-radius: 5px;
-    background: rgb(240, 224, 194);
-    border: none;
-    width: 70%;
-  }
-  
-  .comment_form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .content_field {
-    margin-bottom: 10px;
-    border-radius: 5px;
-    background: rgb(240, 224, 194);
-    border: none;
-    width: 70%;
-    height: 200px;
-  }
+  display: flex;
+  justify-content: space-between;
+}
 
-  .comment-btn {
-    width: 20%;
-    background: orange;
-    border: none;
-    border-radius: 3px;
-  }
-  
-  .time-posted {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .time-posted .ed-dl {
-    display: flex;
-  }
+.show-containe .top-detail {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.name_field {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background: rgb(240, 224, 194);
+  border: none;
+  width: 70%;
+}
+
+.comment_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.content_field {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background: rgb(240, 224, 194);
+  border: none;
+  width: 70%;
+  height: 200px;
+}
+
+.comment-btn {
+  width: 20%;
+  background: orange;
+  border: none;
+  border-radius: 3px;
+}
+
+.time-posted {
+  display: flex;
+  justify-content: space-between;
+}
+
+.time-posted .ed-dl {
+  display: flex;
+}

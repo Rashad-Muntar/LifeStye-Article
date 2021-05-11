@@ -3,52 +3,51 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 25%);
-    height: 100vh;
-    margin-bottom: 0;
-  }
-  
-  .content {
-    margin: 0 20px;
-    height: 50vh;
-  }
-  
-  .article-img {
-    height: 50vh;
-    width: 25vw;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  .theme-color {
-    color: rgb(255, 123, 0);
-    border-bottom: 3px solid rgb(255, 123, 0);
-    padding-bottom: 5px;
-    width: 100px;
-  }
-  
-  .content a:hover {
-    color: rgb(255, 123, 0);
-  }
-  
-  .card-title {
-    color: rgb(255, 123, 0);
-    border-bottom: 3px solid rgb(255, 123, 0);
-    padding-bottom: 3px;
-    width: 100px;
-    text-decoration: none;
-  }
-  
-  .card-text {
-    position: absolute;
-    top: 70%;
-    font-weight: 700;
-  }
-  
-  .head-img-title {
-    width: 500px;
-    font-size: 1.2em;
-    border: none;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  height: 100vh;
+  margin-bottom: 0;
+}
+
+.content {
+  margin: 0 20px;
+  height: 50vh;
+}
+
+.article-img {
+  height: 50vh;
+  width: 25vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.theme-color {
+  color: rgb(255, 123, 0);
+  border-bottom: 3px solid rgb(255, 123, 0);
+  padding-bottom: 5px;
+  width: 100px;
+}
+
+.content a:hover {
+  color: rgb(255, 123, 0);
+}
+
+.card-title {
+  color: rgb(255, 123, 0);
+  border-bottom: 3px solid rgb(255, 123, 0);
+  padding-bottom: 3px;
+  width: 100px;
+  text-decoration: none;
+}
+
+.card-text {
+  position: absolute;
+  top: 70%;
+  font-weight: 700;
+}
+
+.head-img-title {
+  width: 500px;
+  font-size: 1.2em;
+  border: none;
+}
