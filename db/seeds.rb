@@ -10,18 +10,21 @@
 Category.create!(
     [
         {
-        name: "Programming"
+        name: "Programming",
+        priority: 1
         },
         {
-        name: "Fashion"
-        
+        name: "Fashion",
+        priority: 2
         },
         {
-        name: "Business"
+        name: "Business",
+        priority: 3
         },
 
         {
-        name: "Music"
+        name: "Music",
+        priority: 4
         }
 
     ]

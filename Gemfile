@@ -13,12 +13,9 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
   gem 'rspec-rails'
-  gem 'sqlite3'
 end
 
-group :production do
-  gem 'pg'
-end
+gem 'pg'
 gem 'bcrypt', '~> 3.1', '>= 3.1.16'
 # Use Puma as the app server
 gem 'hirb', '~> 0.7.3'

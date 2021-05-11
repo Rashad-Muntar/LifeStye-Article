@@ -24,13 +24,15 @@ module CategoriesHelper
   def show_featured
     content = ''
     @categories.each do |category|
-      content << "<div class='card bg-dark text-white '>"
-      content << image_tag(category.articles.last.image, class: 'cat-img')
-      content << "<div class='card-img-overlay'>"
-      content << link_to(category.name, category_path(category), class: 'card-title cat-img-title')
-      content << content_tag(:p, category.articles.last.title, class: 'card-text cat-article-title')
-      content << '</div>'
-      content << '</div>'
+        unless category.articles.empty?
+            content << "<div class='card bg-dark text-white '>"
+            content << image_tag(category.articles.last.image, class: 'cat-img')
+            content << "<div class='card-img-overlay'>"
+            content << link_to(category.name, category_path(category), class: 'card-title cat-img-title')
+            content << content_tag(:p, category.articles.last.title, class: 'card-text cat-article-title')
+            content << '</div>'
+            content << '</div>'
+        end
     end
     content.html_safe
   end
