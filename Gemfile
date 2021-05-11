@@ -15,8 +15,8 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
-gem 'pg'
 gem 'bcrypt', '~> 3.1', '>= 3.1.16'
+gem 'pg'
 # Use Puma as the app server
 gem 'hirb', '~> 0.7.3'
 gem 'puma', '~> 5.0'
