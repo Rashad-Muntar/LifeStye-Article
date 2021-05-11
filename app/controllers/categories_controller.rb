@@ -5,8 +5,8 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
 
   def index
-    @categories = Category.all
-    @featured = Article.includes('votes')
+    @categories = Category.includes([:articles])
+    @featured = Article.with_attached_image.includes([:votes])
     
   end
 
@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
   def show
     @categories = Category.all
     @category = Category.find(params[:id])
-    @category_articles = @category.articles.order('id DESC').limit(4)
+    @category_articles = @category.articles.with_attached_image.order('id DESC').limit(4)
   end
 
   # GET /categories/new

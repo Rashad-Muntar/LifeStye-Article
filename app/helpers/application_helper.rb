@@ -60,7 +60,6 @@ module ApplicationHelper
     vote_checker = 0
     heighest = ''
     @featured.each do |article|
-
         if article.votes.length > vote_checker
           vote_checker = article.votes.count
           heighest = article
