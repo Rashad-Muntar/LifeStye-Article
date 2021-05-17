@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
     @article.author = current_user
     if @article.save
       flash[:notice] = 'Article was successfully created.'
-      redirect_to @article
+      redirect_to root_path
     else
       flash[:notice] = 'We could not create your article, try again.'
       render :new
@@ -43,8 +43,8 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
-        format.json { render :show, status: :ok, location: @article }
+        format.html { redirect_to root_path, notice: 'Article was successfully updated.' }
+        format.json { render :show, status: :ok, location: root_path }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @article.errors, status: :unprocessable_entity }

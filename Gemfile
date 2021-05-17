@@ -13,13 +13,10 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
   gem 'rspec-rails'
-  gem 'sqlite3'
 end
 
-group :production do
-  gem 'pg'
-end
 gem 'bcrypt', '~> 3.1', '>= 3.1.16'
+gem 'pg'
 # Use Puma as the app server
 gem 'hirb', '~> 0.7.3'
 gem 'puma', '~> 5.0'
@@ -55,6 +52,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'bullet', '~> 6.1'
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'

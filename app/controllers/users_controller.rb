@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.password = 'password'
     if @user.save
+      session[:user_id] = @user.id
       flash[:notice] = 'You have succesfully sign up'
       redirect_to root_path
     else

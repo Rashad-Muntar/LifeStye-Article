@@ -5,14 +5,15 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
 
   def index
-    @categories = Category.all
-    @featured = Article.includes('votes')
+    @categories = Category.includes([:articles])
+    @featured = Article.with_attached_image.includes([:votes])
   end
 
   # GET /categories/1 or /categories/1.json
   def show
     @categories = Category.all
     @category = Category.find(params[:id])
+    @category_articles = @category.articles.with_attached_image.order('id DESC').limit(4)
   end
 
   # GET /categories/new
@@ -26,8 +27,8 @@ class CategoriesController < ApplicationController
 
   # POST /categories or /categories.json
   def create
+    @categories = Category.all
     @category = Category.new(category_params)
-
     respond_to do |format|
       if @category.save
         format.html { redirect_to @category, notice: 'Category was successfully created.' }

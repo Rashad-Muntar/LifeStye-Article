@@ -8,18 +8,7 @@
 <br>
 
 <div class="grid-container">
-<% @category.articles.each_with_index do |article, index| %>
-<div>
-  <%= odd_article_image(index, article) %>
-  <div class="content">
-    <p class="theme-color"><%= @category.name %></p>
-    <p><%= link_to(article.title, article_path(article)) %></p>
-    <p><%= article.text.truncate(100) %></p>
-    <p><small >Read more</small></p>
-    <p><small><%= time_ago_in_words(article.created_at) %></small></p>
-  </div>
-  <%= even_article_image(index, article) %>
+<%= show_category_articles %>
 </div>
-<% end %>
 
-</div>
+
